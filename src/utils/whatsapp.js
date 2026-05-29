@@ -1,10 +1,12 @@
 import { hotelInfo } from '../data/hotelInfo.js';
 
-export function openWhatsAppMessage(lines) {
+export function createWhatsAppUrl(lines) {
   const message = lines.filter(Boolean).join('\n');
-  const url = `https://wa.me/${hotelInfo.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://api.whatsapp.com/send?phone=${hotelInfo.whatsappNumber}&text=${encodeURIComponent(message)}`;
+}
 
-  window.open(url, '_blank', 'noopener,noreferrer');
+export function openWhatsAppMessage(lines) {
+  window.location.href = createWhatsAppUrl(lines);
 }
 
 export function getFormValue(formData, key) {
