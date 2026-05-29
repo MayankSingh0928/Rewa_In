@@ -11,7 +11,7 @@ function HomePage() {
         eyebrow="Rewa hospitality, made comfortable"
         title="Hotel Rewa In"
         copy="Stay close to the city with warm service, polished rooms, and a reservation experience that stays simple."
-        cta={{ label: 'Book Now', path: '/book' }}
+        cta={{ label: 'Book Now', path: '/rooms' }}
       />
       <section className="section intro-grid">
         <div>

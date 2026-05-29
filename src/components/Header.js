@@ -28,7 +28,7 @@ function Header({ activePath, goTo, menuOpen, setMenuOpen }) {
             {item.label}
           </a>
         ))}
-        <a className="book-link" href="/book" onClick={(event) => goTo(event, '/book')}>
+        <a className="book-link" href="/rooms" onClick={(event) => goTo(event, '/rooms')}>
           Book Now
         </a>
       </nav>
