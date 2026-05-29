@@ -1,4 +1,4 @@
-import lobbyImage from '../assets/images/f_img_1.jpg';
+import corridorImage from '../assets/images/hotel-corridor-square.webp';
 import FeaturedRooms from '../components/FeaturedRooms.js';
 import Hero from '../components/Hero.js';
 import VideoBand from '../components/VideoBand.js';
@@ -25,7 +25,7 @@ function HomePage() {
             More about us
           </a>
         </div>
-        <img src={lobbyImage} alt="Hotel Rewa In lounge seating" loading="lazy" decoding="async" />
+        <img src={corridorImage} alt="Hotel Rewa In corridor" loading="lazy" decoding="async" />
       </section>
       <FeaturedRooms />
       <VideoBand />

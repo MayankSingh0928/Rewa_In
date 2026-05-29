@@ -483,6 +483,32 @@ textarea {
   font-weight: 700;
 }
 
+.selected-room-summary {
+  display: grid;
+  gap: 4px;
+  border: 1px solid rgba(185, 133, 66, 0.35);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fff8ef;
+}
+
+.selected-room-summary span {
+  color: var(--gold-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.selected-room-summary strong {
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.selected-room-summary p {
+  color: var(--teal);
+  font-weight: 700;
+}
+
 .info-panel {
   display: grid;
   gap: 20px;

@@ -14,5 +14,6 @@ export const hotelInfo = {
       href: 'tel:+918839399865',
     },
   ],
+  whatsappNumber: '917067038682',
   email: 'stay@hotelrewain.com',
 };

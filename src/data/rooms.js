@@ -1,13 +1,15 @@
-import roomOne from '../assets/images/img_1.jpg';
-import roomTwo from '../assets/images/img_2.jpg';
-import roomThree from '../assets/images/img_3.jpg';
-import roomFour from '../assets/images/img_4.jpg';
-import loungeImage from '../assets/images/img_6.jpg';
+import bathroom from '../assets/images/bathroom.webp';
+import hotelHero from '../assets/images/hotel-hero.webp';
+import roomClassic from '../assets/images/room-classic.webp';
+import roomDeluxe from '../assets/images/room-deluxe.webp';
+import roomExecutive from '../assets/images/room-executive.webp';
+import roomPremium from '../assets/images/room-premium.webp';
 
 export const rooms = [
   {
+    slug: 'presidential-room',
     name: 'Presidential Room',
-    image: roomOne,
+    image: hotelHero,
     guests: '2 Guests',
     size: '420 sq ft',
     price: 'From Rs. 2,499',
@@ -15,8 +17,9 @@ export const rooms = [
     description: 'A calm, polished room with a king bed, work desk, city views, and attentive room service.',
   },
   {
+    slug: 'luxury-room',
     name: 'Luxury Room',
-    image: roomTwo,
+    image: roomPremium,
     guests: '3 Guests',
     size: '360 sq ft',
     price: 'From Rs. 1,999',
@@ -24,8 +27,9 @@ export const rooms = [
     description: 'Bright interiors, generous storage, plush bedding, and everything needed for a comfortable stay.',
   },
   {
+    slug: 'deluxe-room',
     name: 'Deluxe Room',
-    image: roomThree,
+    image: roomDeluxe,
     guests: '2 Guests',
     size: '300 sq ft',
     price: 'From Rs. 1,499',
@@ -33,8 +37,9 @@ export const rooms = [
     description: 'A refined everyday room with soft lighting, clean lines, and quick access to hotel services.',
   },
   {
+    slug: 'family-suite',
     name: 'Family Suite',
-    image: roomFour,
+    image: roomClassic,
     guests: '4 Guests',
     size: '520 sq ft',
     price: 'From Rs. 3,299',
@@ -42,8 +47,9 @@ export const rooms = [
     description: 'Separate seating, extra bedding options, and a relaxed setup for families and longer visits.',
   },
   {
+    slug: 'executive-room',
     name: 'Executive Room',
-    image: loungeImage,
+    image: roomExecutive,
     guests: '2 Guests',
     size: '340 sq ft',
     price: 'From Rs. 2,199',
@@ -51,8 +57,9 @@ export const rooms = [
     description: 'A quieter room designed for business travelers, with dependable Wi-Fi and a larger desk.',
   },
   {
+    slug: 'classic-room',
     name: 'Classic Room',
-    image: roomTwo,
+    image: bathroom,
     guests: '2 Guests',
     size: '280 sq ft',
     price: 'From Rs. 1,299',
@@ -60,3 +67,7 @@ export const rooms = [
     description: 'Clean, compact, and practical, with the essentials handled carefully from check-in to checkout.',
   },
 ];
+
+export function getRoomBySlug(slug) {
+  return rooms.find((room) => room.slug === slug) || rooms[0];
+}

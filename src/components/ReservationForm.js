@@ -1,17 +1,38 @@
 import { useState } from 'react';
+import { getFormValue, openWhatsAppMessage } from '../utils/whatsapp.js';
 
-function ReservationForm() {
+function ReservationForm({ selectedRoom }) {
   const [sent, setSent] = useState(false);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    openWhatsAppMessage([
+      'New room booking request for Hotel Rewa In',
+      `Room Type: ${selectedRoom.name}`,
+      `Room Price: ${selectedRoom.price}`,
+      `Arrival Date: ${getFormValue(formData, 'arrival')}`,
+      `Departure Date: ${getFormValue(formData, 'departure')}`,
+      `Rooms: ${getFormValue(formData, 'rooms')}`,
+      `Guests: ${getFormValue(formData, 'guests')}`,
+      `Email: ${getFormValue(formData, 'email')}`,
+      `Note: ${getFormValue(formData, 'note') || 'No note added'}`,
+    ]);
+
+    setSent(true);
+  }
+
   return (
-    <form
-      className="form-card"
-      onSubmit={(event) => {
-        event.preventDefault();
-        setSent(true);
-      }}
-    >
+    <form className="form-card" onSubmit={handleSubmit}>
       <h2>Reservation Form</h2>
+      <div className="selected-room-summary">
+        <span>Selected Room</span>
+        <strong>{selectedRoom.name}</strong>
+        <p>{selectedRoom.price}</p>
+      </div>
+      <input type="hidden" name="roomType" value={selectedRoom.name} />
+      <input type="hidden" name="roomPrice" value={selectedRoom.price} />
       <div className="form-row">
         <label>
           Arrival Date
@@ -55,7 +76,7 @@ function ReservationForm() {
       <button className="primary-button" type="submit">
         Reserve Now
       </button>
-      {sent && <p className="form-status">Reservation request prepared. We will confirm availability shortly.</p>}
+      {sent && <p className="form-status">WhatsApp is open with your booking request ready to send.</p>}
     </form>
   );
 }

@@ -16,7 +16,7 @@ function FeaturedRooms() {
           {rooms.slice(1, 3).map((room) => (
             <LazyBackground
               as="a"
-              href="/book"
+              href={`/book?room=${room.slug}`}
               onClick={internalGo}
               className="stacked-room"
               key={room.name}

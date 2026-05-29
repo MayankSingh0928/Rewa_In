@@ -1,4 +1,4 @@
-import roomFour from '../assets/images/img_4.jpg';
+import hotelFront from '../assets/images/hotel-front.webp';
 import ContactForm from '../components/ContactForm.js';
 import InnerHero from '../components/InnerHero.js';
 import VideoBand from '../components/VideoBand.js';
@@ -11,7 +11,7 @@ function ContactPage() {
       <section className="section split-form">
         <ContactForm />
         <aside className="info-panel">
-          <img src={roomFour} alt="Comfortable room at Hotel Rewa In" loading="lazy" decoding="async" />
+          <img src={hotelFront} alt="Hotel Rewa In front exterior" loading="lazy" decoding="async" />
           <h2>We are here to help.</h2>
           <p>
             Reach out for reservations, room preferences, early check-in requests, or anything that would make your stay

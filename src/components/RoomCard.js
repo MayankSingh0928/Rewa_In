@@ -1,6 +1,8 @@
 import { internalGo } from '../utils/router.js';
 
 function RoomCard({ room, compact = false, loading = 'lazy' }) {
+  const bookingPath = `/book?room=${room.slug}`;
+
   return (
     <article className={compact ? 'room-card compact' : 'room-card'}>
       <div className="room-image">
@@ -14,7 +16,7 @@ function RoomCard({ room, compact = false, loading = 'lazy' }) {
           <span>{room.size}</span>
         </div>
         <p>{room.description}</p>
-        <a className="secondary-button" href="/book" onClick={internalGo}>
+        <a className="secondary-button" href={bookingPath} onClick={internalGo}>
           Book Now {room.price}
         </a>
       </div>

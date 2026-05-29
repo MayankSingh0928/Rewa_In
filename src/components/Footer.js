@@ -26,7 +26,7 @@ function Footer({ goTo }) {
       <div>
         <h3>Plan Your Stay</h3>
         <p>Owned by {hotelInfo.ownerName}. Comfortable rooms, thoughtful service, and simple reservations.</p>
-        <a className="footer-book" href="/book" onClick={(event) => goTo(event, '/book')}>
+        <a className="footer-book" href="/book" onClick={(event) => goTo(event, '/rooms')}>
           Book a Room
         </a>
       </div>

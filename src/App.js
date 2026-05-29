@@ -6,14 +6,14 @@ import BookPage from './pages/BookPage.js';
 import ContactPage from './pages/ContactPage.js';
 import HomePage from './pages/HomePage.js';
 import RoomsPage from './pages/RoomsPage.js';
-import { normalizePath } from './utils/router.js';
+import { getRoutePath, getSearchParams, normalizePath } from './utils/router.js';
 
 function App() {
-  const [path, setPath] = useState(normalizePath(window.location.pathname));
+  const [path, setPath] = useState(normalizePath(`${window.location.pathname}${window.location.search}`));
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onPopState = () => setPath(normalizePath(window.location.pathname));
+    const onPopState = () => setPath(normalizePath(`${window.location.pathname}${window.location.search}`));
 
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
@@ -25,7 +25,10 @@ function App() {
   }, [path]);
 
   const page = useMemo(() => {
-    switch (path) {
+    const routePath = getRoutePath(path);
+    const searchParams = getSearchParams(path);
+
+    switch (routePath) {
       case '/rooms':
         return <RoomsPage />;
       case '/about':
@@ -33,7 +36,7 @@ function App() {
       case '/contact':
         return <ContactPage />;
       case '/book':
-        return <BookPage />;
+        return <BookPage selectedRoomSlug={searchParams.get('room')} />;
       default:
         return <HomePage />;
     }
@@ -49,7 +52,7 @@ function App() {
 
   return (
     <>
-      <Header activePath={path} goTo={goTo} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Header activePath={getRoutePath(path)} goTo={goTo} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main>{page}</main>
       <Footer goTo={goTo} />
     </>

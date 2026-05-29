@@ -1,4 +1,4 @@
-import poolImage from '../assets/images/img_5.jpg';
+import corridorImage from '../assets/images/hotel-corridor.webp';
 import { internalGo } from '../utils/router.js';
 import LazyBackground from './LazyBackground.js';
 
@@ -7,7 +7,7 @@ function VideoBand() {
     <LazyBackground
       as="section"
       className="video-band"
-      backgroundImage={`linear-gradient(rgba(14, 18, 24, .5), rgba(14, 18, 24, .5)), url(${poolImage})`}
+      backgroundImage={`linear-gradient(rgba(14, 18, 24, .5), rgba(14, 18, 24, .5)), url(${corridorImage})`}
     >
       <div>
         <h2>Relax and enjoy your stay.</h2>

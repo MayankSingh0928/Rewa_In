@@ -43,6 +43,16 @@ npm run build
 
 The production output is generated in `dist/`.
 
+## Optimize Real Images
+
+Real hotel photos are optimized into lightweight WebP files before they are used by the app:
+
+```bash
+python scripts/optimize_real_images.py
+```
+
+The script reads the source photos from your local `Downloads` folder and writes optimized images to `src/assets/images/`.
+
 ## Preview Production Build
 
 ```bash
