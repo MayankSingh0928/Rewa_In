@@ -76,7 +76,7 @@ function ReservationForm({ selectedRoom }) {
       <button className="primary-button" type="submit">
         Reserve Now
       </button>
-      {sent && <p className="form-status">Opening WhatsApp with your booking request.</p>}
+      {sent && <p className="form-status">Preparing your booking request. Redirecting to WhatsApp...</p>}
     </form>
   );
 }

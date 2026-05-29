@@ -5,8 +5,12 @@ export function createWhatsAppUrl(lines) {
   return `https://api.whatsapp.com/send?phone=${hotelInfo.whatsappNumber}&text=${encodeURIComponent(message)}`;
 }
 
-export function openWhatsAppMessage(lines) {
-  window.location.href = createWhatsAppUrl(lines);
+export function openWhatsAppMessage(lines, delay = 1200) {
+  const url = createWhatsAppUrl(lines);
+
+  window.setTimeout(() => {
+    window.location.href = url;
+  }, delay);
 }
 
 export function getFormValue(formData, key) {

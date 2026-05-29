@@ -41,7 +41,7 @@ function ContactForm() {
       <button className="primary-button" type="submit">
         Send Message
       </button>
-      {sent && <p className="form-status">Opening WhatsApp with your message.</p>}
+      {sent && <p className="form-status">Preparing your message. Redirecting to WhatsApp...</p>}
     </form>
   );
 }
